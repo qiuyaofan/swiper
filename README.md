@@ -1,4 +1,4 @@
-# -swiper
+# swiper
 一个手机端简易垂直滑动插件
 
 html机构如下：
