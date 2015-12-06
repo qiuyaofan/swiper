@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1">
+    <title>wap-slide</title>
+    <style>
+        *{
+          margin:0;
+          padding: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .slide-container{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .slide-wapper{
+
+            height: 100%;
+        }
+        .slide-item{
+            height: 100%;
+            position:relative;
+            background: #F9E2C6;
+        }
+       /* .slide-item:first-child{
+            background: #F9E2C6;
+        }
+        .slide-item:nth-child(2){
+            background: #5F85B3;
+        }
+        .slide-item:nth-child(3){
+            background: #ECB22C;
+        }
+        .slide-item:last-child{
+            background: red;
+        }*/
+        img{
+            display: block;
+        }
+        .pt10{
+            padding-top: 10%;
+        }
+
+        .A_img1 {
+            z-index: 2;
+            opacity: 0;
+            width: 100%;
+        }
+        .A_img1.w{
+            width: 87.5%;
+            margin: 0 auto;
+        }
+        .A_img2 {
+            width: 93%;
+            margin: 0 auto;
+            opacity: 0;
+        }
+        .current .zoom{
+            opacity: 0;
+            animation: zoomIn 0.4s ease-in 0s forwards;
+        }
+        .current .fade{
+            opacity: 0;
+            animation: fadeIn 0.4s ease-in 0s forwards;
+        }
+
+
+        .current .A_img2{
+            opacity: 0;
+            animation: fadeInUp 0.3s ease-in 0s forwards;
+        }
+        .array {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            margin-left: -15px;
+            width: 30px;
+            height: 28px;
+            z-index: 999;
+            animation: start 1.5s infinite ease-in-out
+        }
+        .slide-page{
+            right: 12px;
+            top: 50%;
+            position: absolute;
+            width: 10px;
+            transform: translate3d(0,-50%,0);
+            z-index: 2;
+        }
+        .slide-page>span{
+            width: 12px;
+            height: 12px;
+            border-radius: 100%;
+            background: #a2805d;
+            margin: 5px 0;
+            display: block;
+            opacity: .4;
+        }
+        .slide-page>span.current{
+            opacity:1;
+        }
+        @keyframes start {
+            0%,
+            30% {
+                opacity: 0;
+                transform: translate(0, 10px)
+            }
+            60% {
+                opacity: 1;
+                transform: translate(0, 0)
+            }
+            100% {
+                opacity: 0;
+                transform: translate(0, -8px)
+            }
+        }
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.3, 0.3);
+                opacity: 0
+            }
+            50% {
+                opacity: 1
+            }
+            100% {
+                opacity: 1
+            }
+        }
+        @keyframes fadeInUp {
+            0% {
+                transform: translateY(40px);
+                opacity: 0
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0
+            }
+            100% {
+                opacity: 1
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <div class="slide-wapper">
+            <div class="slide-item">
+                <img src="http://img.yi114.com/20157714227_1_wap_img_11.png" alt="" class="A_img1 zoom pt10">
+                <img src="http://img.yi114.com/201591514175_1_wap_img_12.png" alt="" class="A_img2">
+                <img src="http://img.yi114.com/2015523165411_1_wap_xiala.png" alt="" class="array">
+            </div>
+            <div class="slide-item">
+                 <img src="http://img.yi114.com/2015915142026_1_wap_img_21.png" class="A_img1 fade w100">
+                <img src="http://img.yi114.com/201561181017_1_wap_img_22.png" class="A_img2">
+                <img src="http://img.yi114.com/2015523165411_1_wap_xiala.png" alt="" class="array">
+            </div>
+            <div class="slide-item">
+                 <img src="http://img.yi114.com/2015915142134_1_wap_img_31.png" class="A_img1 fade">
+                <img src="http://img.yi114.com/201562161451_1_wap_img_32.png" class="A_img2">
+                <img src="http://img.yi114.com/2015523165411_1_wap_xiala.png" alt="" class="array">
+            </div>
+            <div class="slide-item">
+                 <img src="http://img.yi114.com/201591514249_1_wap_img_41.png" class="A_img1 fade">
+                <img src="http://img.yi114.com/201561181020_1_wap_img_42.png" class="A_img2">
+                <img src="http://img.yi114.com/2015523165411_1_wap_xiala.png" alt="" class="array">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="http://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+<script src="js/swiper1.0.min.js"></script>
+<script>
+$(function() {
+    $('.slide-wapper').wapSlide({
+        callback:function(index){
+            console.log(index);
+        }
+    });
+    //禁止原本的滚动
+    document.body.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+    }, false);
+});
+</script>
+
+</html>
