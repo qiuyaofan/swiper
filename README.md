@@ -1,7 +1,8 @@
 # swiper
 一个手机端简易垂直滑动插件
 
-html机构如下：
+##html机构如下：
+```
     <div class="slide-container">
       <div class="slide-wapper">
           <div class="slide-item">
@@ -18,8 +19,10 @@ html机构如下：
           </div>
       </div>
   </div>
+```
   
-  js调用：
+##js调用：
+  ```
   $('.slide-wapper').wapSlide({
       before:function(index){
           console.log('滑动前');
@@ -28,8 +31,10 @@ html机构如下：
           console.log('滑动后回调');
       }
   });
+  ```
   
-  css依赖：
+##css依赖：
+  ```
   html,body{
       height: 100%;
       width: 100%;
@@ -46,3 +51,4 @@ html机构如下：
   .slide-item{
       height: 100%;
   }
+  ```
