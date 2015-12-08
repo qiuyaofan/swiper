@@ -2,6 +2,8 @@
 一个手机端简易垂直滑动插件
 因为framework里的swiper包功能强大，包体积过大，许多功能并不需要用到，故写个小的滑动插件，今后会继续优化
 
+在线代码演示：http://codepen.io/qiuyaofan/pen/OMPxyb
+
 ##html机构如下：
 ```
     <div class="slide-container">
